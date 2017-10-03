@@ -1,17 +1,16 @@
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { DrawerModule, ToolbarModule } from '@swimlane/ngx-ui';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent],
   imports: [
     BrowserModule,
-    DrawerModule,
-    ToolbarModule
+    RouterModule.forRoot([
+      {path: 'drawer', loadChildren: './drawer/drawer-test.module#DrawerTestModule'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
